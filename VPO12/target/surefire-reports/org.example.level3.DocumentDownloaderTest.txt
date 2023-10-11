@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.example.level3.DocumentDownloaderTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.529 s - in org.example.level3.DocumentDownloaderTest

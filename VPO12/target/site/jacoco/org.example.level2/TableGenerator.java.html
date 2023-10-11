@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TableGenerator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">VPO12</a> &gt; <a href="index.source.html" class="el_package">org.example.level2</a> &gt; <span class="el_source">TableGenerator.java</span></div><h1>TableGenerator.java</h1><pre class="source lang-java linenums">package org.example.level2;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+<span class="nc" id="L6">public class TableGenerator {</span>
+    public static void main(String[] args) {
+<span class="fc" id="L8">        int numRows = 10; // Количество строк в таблице</span>
+<span class="fc" id="L9">        int minColorValue = 0; // Минимальное значение цвета (черный)</span>
+<span class="fc" id="L10">        int maxColorValue = 255; // Максимальное значение цвета (белый)</span>
+
+        try {
+<span class="fc" id="L13">            FileWriter fileWriter = new FileWriter(&quot;table.html&quot;);</span>
+
+            // Записываем начало HTML-файла и открываем тег таблицы с CSS-стилем
+<span class="fc" id="L16">            fileWriter.write(&quot;&lt;html&gt;\n&lt;body&gt;\n&lt;style&gt;table { border-collapse: collapse; }&lt;/style&gt;\n&lt;table&gt;\n&quot;);</span>
+
+            // Генерируем строки таблицы с изменяющимся фоном
+<span class="fc bfc" id="L19" title="All 2 branches covered.">            for (int i = 0; i &lt; numRows; i++) {</span>
+<span class="fc" id="L20">                int colorValue = minColorValue + (int) ((double) i / (numRows - 1) * (maxColorValue - minColorValue));</span>
+<span class="fc" id="L21">                String colorHex = String.format(&quot;#%02x%02x%02x&quot;, colorValue, colorValue, colorValue);</span>
+
+                // Записываем открывающий тег строки с фоном
+<span class="fc" id="L24">                fileWriter.write(&quot;&lt;tr style=\&quot;background-color: &quot; + colorHex + &quot;;\&quot;&gt;&quot;);</span>
+
+                // Записываем содержимое ячеек в строке
+<span class="fc" id="L27">                fileWriter.write(&quot;&lt;td&gt;Ячейка 1&lt;/td&gt;&quot;);</span>
+<span class="fc" id="L28">                fileWriter.write(&quot;&lt;td&gt;Ячейка 2&lt;/td&gt;&quot;);</span>
+<span class="fc" id="L29">                fileWriter.write(&quot;&lt;td&gt;Ячейка 3&lt;/td&gt;&quot;);</span>
+<span class="fc" id="L30">                fileWriter.write(&quot;&lt;td&gt;Ячейка 4&lt;/td&gt;&quot;);</span>
+<span class="fc" id="L31">                fileWriter.write(&quot;&lt;td&gt;Ячейка 5&lt;/td&gt;&quot;);</span>
+<span class="fc" id="L32">                fileWriter.write(&quot;&lt;td&gt;Ячейка 6&lt;/td&gt;&quot;);</span>
+
+                // Записываем закрывающий тег строки
+<span class="fc" id="L35">                fileWriter.write(&quot;&lt;/tr&gt;\n&quot;);</span>
+            }
+
+            // Записываем закрывающий тег таблицы, тела и HTML-файла
+<span class="fc" id="L39">            fileWriter.write(&quot;&lt;/table&gt;\n&lt;/body&gt;\n&lt;/html&gt;&quot;);</span>
+
+<span class="fc" id="L41">            fileWriter.close();</span>
+<span class="fc" id="L42">            System.out.println(&quot;HTML-файл успешно сгенерирован.&quot;);</span>
+<span class="nc" id="L43">        } catch (IOException e) {</span>
+<span class="nc" id="L44">            System.out.println(&quot;Ошибка при генерации HTML-файла: &quot; + e.getMessage());</span>
+<span class="fc" id="L45">        }</span>
+<span class="fc" id="L46">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

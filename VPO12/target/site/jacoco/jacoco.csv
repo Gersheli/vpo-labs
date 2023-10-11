@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+VPO12,org.example.level3,DocumentDownloader,3,84,1,5,1,22,2,4,1,2
+VPO12,org.example.level3,FileSearch,7,69,2,12,2,18,3,7,1,2
+VPO12,org.example.level2,TableGenerator,9,92,0,2,3,21,1,2,1,1
+VPO12,org.example.level2,RectangleArea,3,44,0,6,1,14,1,4,1,1
+VPO12,org.example.level1,HelloWorld,3,25,0,0,1,7,1,1,1,1
+VPO12,org.example.level1,PeopleInfo,3,131,1,9,1,31,2,5,1,1
